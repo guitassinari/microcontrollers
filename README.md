@@ -29,6 +29,12 @@ A entrega inclue:
     - 0%: motor girando a velocidade máxima em uma direção
     - 100%: motor girando a velocidade máxima na outra direção
     - A variação deve ser linear
+    
+    
+Mais sobre encoders de quadratura aqui: http://www.creative-robotics.com/quadrature-intro
+Mais sobre resolução de encoders de quadratura: https://www.linearmotiontips.com/how-encoder-resolution-is-determined/
+![image](https://user-images.githubusercontent.com/10967861/64137996-5a65f100-cdd1-11e9-8ba2-51b4beeeba1f.png)
+
 
 #### API
 
