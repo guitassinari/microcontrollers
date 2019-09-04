@@ -14,27 +14,40 @@ O hardware deve ser capaz de:
 
 ### Entrega
 
-A entrega inclue:
+A entrega inclui:
 
 - Placa de circuito impresso a ser encaixada diretamente no conector shield da Galileo, com conectores para o robô e fontes.
+- API para controle do robô
+- Controlador PID utilizando API
 
 ### Especificações do trabalho
 
-#### Acionamento de motores e leitura de sensores
+#### Placa impressa
+
+###### Como e onde serão conectados os encoders do robô?
+`A definição do trabalho diz que a placa deve ter os conectores para robô e fontes.
+Como faço isso?`
+
+##### Acionamento de motores
 
 - O motor deve ser acionado por PWM (com resolução de, pelo menos, 8 bits)
-- Encoders devem ser decodificados em quadratura
-- Contagem, ao menos parcial, feita em hardware para evitar perdas
+    - Mais sobre PWM: https://www.kompulsa.com/introduction-pwm-pulse-width-modulation-works/
 - Acionamento do motor por PWM deve ser:
     - 0%: motor girando a velocidade máxima em uma direção
     - 100%: motor girando a velocidade máxima na outra direção
     - A variação deve ser linear
     
-    
-Mais sobre encoders de quadratura aqui: http://www.creative-robotics.com/quadrature-intro
-Mais sobre resolução de encoders de quadratura: https://www.linearmotiontips.com/how-encoder-resolution-is-determined/
+##### Leitura de sensores
+
+- Encoders devem ser decodificados em quadratura
+    - Mais sobre encoders de quadratura aqui: http://www.creative-robotics.com/quadrature-intro
+    - Mais sobre resolução de encoders de quadratura: https://www.linearmotiontips.com/how-encoder-resolution-is-determined/
+- Contagem, ao menos parcial, feita em hardware para evitar perdas
+
 ![image](https://user-images.githubusercontent.com/10967861/64137996-5a65f100-cdd1-11e9-8ba2-51b4beeeba1f.png)
 
+####### Contagem parcial em hardware?
+``Se eu utilizar um circuito digital responsável por realizar a leitura do encoder de quadratura, serve?`
 
 #### API
 
@@ -66,6 +79,8 @@ O programa deve ser executado em sistema Linux no espaço de usuário (sem permi
 A avaliação do projeto inclui o hardware e o sofwtare necessário para a demonstração do trabalho. Em especial, o particionamento entre espaço de kernel e espaço de usuário.
 
 Os nodos no `/dev` que forem necessários devem ser criados pelo próprio driver, para o qual deve ser criado o arquivo de regras para o `udev`
+
+###### O que raios são nodos?
 
 ### Relatório
 
